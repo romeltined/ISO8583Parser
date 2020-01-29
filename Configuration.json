@@ -1,0 +1,22 @@
+[
+    {
+      "Id": 2,
+      "Name": "PAN",
+      "RawValue": "",
+      "Value": "",
+      "Length": 2,
+      "Type": "FIXED",
+      "Format": "n",
+      "Exist": false
+    },
+    {
+      "Id": 3,
+      "Name": "ProcessingCode",
+      "RawValue": "",
+      "Value": "",
+      "Length": 3,
+      "Type": "FIXED",
+      "Format": "n",
+      "Exist": false
+    }
+]
