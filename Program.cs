@@ -10,15 +10,30 @@ namespace ISO8583Parser
     {
         static void Main(string[] args)
         {
+
+            while (true) // Loop indefinitely
+            {
+                Console.WriteLine("Enter input:"); // Prompt
+                string line = Console.ReadLine(); // Get string from user
+                if (line == "exit") // Check string
+                {
+                    break;
+                }
+                ParseISO8583(line);
+            }
+ 
+
+        }
+
+        static void ParseISO8583(string line)
+        {
+
             ISO8583 iso8583 = new ISO8583();
             string transactionFileName = System.IO.Path.GetFullPath(Directory.GetCurrentDirectory() + @"\Transaction.txt");
 
-            var transaction = File.ReadAllText(transactionFileName).ToUpper();
-
-
+            var transaction = line.ToUpper().Replace(" ", ""); //File.ReadAllText(transactionFileName).ToUpper().Replace(" ", "");
 
             string fileName = System.IO.Path.GetFullPath(Directory.GetCurrentDirectory() + @"\Configuration.json");
-
 
             var jsonString = File.ReadAllText(fileName);
             var tpdu = transaction.Substring(0, 10);
@@ -26,22 +41,26 @@ namespace ISO8583Parser
             var bitmap = transaction.Substring(14, 16);
             var binarybitmap = HexStringToBinary(bitmap);
 
+            Console.WriteLine("TPDU  " + tpdu);
+            Console.WriteLine("MTI   " + mti);
+            Console.WriteLine("BitMap  " + bitmap);
+            Console.WriteLine("BinBitMap   " + binarybitmap);
+
             List<DataElement> dataElements = new List<DataElement>();
             dataElements = JsonSerializer.Deserialize<List<DataElement>>(jsonString);
             dataElements = BitmapDataElements(dataElements, binarybitmap);
 
-            //int trxLength = transaction.Length-30;
             var trxTrimmed = transaction.Substring(30, transaction.Length - 30);
             int strLength = 0;
 
-            foreach(DataElement de in dataElements)
+            foreach (DataElement de in dataElements)
             {
                 if (de.Exist)
-                { 
+                {
                     switch (de.Type)
                     {
                         case "FIXED":
-                            if (de.Format=="z")
+                            if (de.Format == "z")
                             {
                                 strLength = de.Length;
                                 de.RawValue = trxTrimmed.Substring(0, strLength);
@@ -51,30 +70,63 @@ namespace ISO8583Parser
                                 strLength = de.Length * 2;
                                 de.RawValue = trxTrimmed.Substring(0, strLength);
                             }
-                        
                             break;
 
+                        case "LLVAR":
+                            if (de.Format == "z")
+                            {
+                                strLength = int.Parse(trxTrimmed.Substring(0, 2));
+                                if (IsOdd(strLength))
+                                {
+                                    strLength++;
+                                }
+                                de.RawValue = trxTrimmed.Substring(2, strLength);
+                                strLength = strLength + 2;
+                            }
+                            else
+                            {
+                                strLength = int.Parse(trxTrimmed.Substring(0, 2));
+                                strLength = strLength * 2;
+                                de.RawValue = trxTrimmed.Substring(4, strLength);
+                                strLength = strLength + 4;
+                            }
+                            break;
+
+                        case "LLLVAR":
+                            if (de.Format == "z")
+                            {
+                                strLength = int.Parse(trxTrimmed.Substring(0, 4));
+                                if (IsOdd(strLength))
+                                {
+                                    strLength++;
+                                }
+                                de.RawValue = trxTrimmed.Substring(4, strLength);
+                                strLength = strLength + 4;
+                            }
+                            else
+                            {
+                                strLength = int.Parse(trxTrimmed.Substring(0, 4));
+                                strLength = strLength * 2;
+                                de.RawValue = trxTrimmed.Substring(4, strLength);
+                                strLength = strLength + 4;
+                            }
+                            break;
 
                     }
+                    Console.WriteLine("[" + de.Id.ToString() + "]  " + de.RawValue);
                     trxTrimmed = trxTrimmed.Substring(strLength, (trxTrimmed.Length - strLength));
                 }
             }
 
-            iso8583.TPDU = tpdu;
-            iso8583.MTI = mti;
-            iso8583.Bitmap = bitmap;
-            iso8583.BinaryBitmap = binarybitmap;
-            iso8583.DataElements = dataElements;
 
         }
 
-
         static List<DataElement> BitmapDataElements(List<DataElement> dataElements, string binaryBitmap)
         {
-            for (int i = 1; i < 14; i++)
+            for (int i = 0; i < 64; i++)
             {
                 if (binaryBitmap[i].ToString() == "1")
-                    dataElements[i-1].Exist = true;
+                    dataElements[i].Exist = true;
             }
             return dataElements;
         }
@@ -105,6 +157,15 @@ namespace ISO8583Parser
             var ret = string.Join("", from character in hexString
                                       select lup[character]);
             return ret;
+        }
+
+        static bool IsOdd(int input)
+        {
+            if(input%2 !=0)
+            {
+                return true;
+            }
+            return false;
         }
 
     }

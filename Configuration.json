@@ -1,22 +1,642 @@
 [
-    {
-      "Id": 2,
-      "Name": "PAN",
-      "RawValue": "",
-      "Value": "",
-      "Length": 2,
-      "Type": "FIXED",
-      "Format": "n",
-      "Exist": false
-    },
-    {
-      "Id": 3,
-      "Name": "ProcessingCode",
-      "RawValue": "",
-      "Value": "",
-      "Length": 3,
-      "Type": "FIXED",
-      "Format": "n",
-      "Exist": false
-    }
+  {
+    "Id": 1,
+    "Name": "Bitmap",
+    "RawValue": "",
+    "Value": "",
+    "Length": 8,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 2,
+    "Name": "PAN",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 3,
+    "Name": "ProcessingCode",
+    "RawValue": "",
+    "Value": "",
+    "Length": 3,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 4,
+    "Name": "Amount",
+    "RawValue": "",
+    "Value": "",
+    "Length": 6,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 5,
+    "Name": "SettlementAmount",
+    "RawValue": "",
+    "Value": "",
+    "Length": 6,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 6,
+    "Name": "BillingAmount",
+    "RawValue": "",
+    "Value": "",
+    "Length": 6,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 7,
+    "Name": "TransmissionDateTime",
+    "RawValue": "",
+    "Value": "",
+    "Length": 5,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 8,
+    "Name": "BillingFee",
+    "RawValue": "",
+    "Value": "",
+    "Length": 4,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 9,
+    "Name": "SettlementConversionRate",
+    "RawValue": "",
+    "Value": "",
+    "Length": 4,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 10,
+    "Name": "ConversionRateBilling",
+    "RawValue": "",
+    "Value": "",
+    "Length": 6,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 11,
+    "Name": "STAN",
+    "RawValue": "",
+    "Value": "",
+    "Length": 3,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 12,
+    "Name": "TIME",
+    "RawValue": "",
+    "Value": "",
+    "Length": 3,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 13,
+    "Name": "DATE",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 14,
+    "Name": "ExpirationDate",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 15,
+    "Name": "SettlementDate",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 16,
+    "Name": "Currencyconversiondate",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 17,
+    "Name": "Capturedate",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 18,
+    "Name": "Merchant type",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 19,
+    "Name": "Acquiring institution",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 20,
+    "Name": "PAN extended",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 21,
+    "Name": "Forwarding institution",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 22,
+    "Name": "Point of service entry mode",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 23,
+    "Name": "Application PAN sequence number",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 24,
+    "Name": "NII",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 25,
+    "Name": "Point of service condition code",
+    "RawValue": "",
+    "Value": "",
+    "Length": 1,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 26,
+    "Name": "Point of service capture code",
+    "RawValue": "",
+    "Value": "",
+    "Length": 1,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 27,
+    "Name": "Authorizing identification response length",
+    "RawValue": "",
+    "Value": "",
+    "Length": 1,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 28,
+    "Name": "Amount, transaction fee",
+    "RawValue": "",
+    "Value": "",
+    "Length": 4,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 29,
+    "Name": "Amount, settlement fee",
+    "RawValue": "",
+    "Value": "",
+    "Length": 4,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 30,
+    "Name": "Amount, transaction processing fee",
+    "RawValue": "",
+    "Value": "",
+    "Length": 4,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 31,
+    "Name": "Amount, settlement processing fee",
+    "RawValue": "",
+    "Value": "",
+    "Length": 4,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 32,
+    "Name": "Acquiring institution identification code",
+    "RawValue": "",
+    "Value": "",
+    "Length": 4,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 33,
+    "Name": "Forwarding institution identification code",
+    "RawValue": "",
+    "Value": "",
+    "Length": 4,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 34,
+    "Name": "Primary account number, extended",
+    "RawValue": "",
+    "Value": "",
+    "Length": 4,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 35,
+    "Name": "Track 2 data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 0,
+    "Type": "LLVAR",
+    "Format": "z",
+    "Exist": false
+  },
+  {
+    "Id": 36,
+    "Name": "Track 3 data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 52,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 37,
+    "Name": "Retrieval reference number",
+    "RawValue": "",
+    "Value": "",
+    "Length": 12,
+    "Type": "FIXED",
+    "Format": "an",
+    "Exist": false
+  },
+  {
+    "Id": 38,
+    "Name": "Authorization identification response",
+    "RawValue": "",
+    "Value": "",
+    "Length": 6,
+    "Type": "FIXED",
+    "Format": "an",
+    "Exist": false
+  },
+  {
+    "Id": 39,
+    "Name": "Response code",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "an",
+    "Exist": false
+  },
+  {
+    "Id": 40,
+    "Name": "Service restriction code",
+    "RawValue": "",
+    "Value": "",
+    "Length": 3,
+    "Type": "FIXED",
+    "Format": "an",
+    "Exist": false
+  },
+  {
+    "Id": 41,
+    "Name": "Card acceptor terminal identification",
+    "RawValue": "",
+    "Value": "",
+    "Length": 8,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 42,
+    "Name": "Card acceptor identification code",
+    "RawValue": "",
+    "Value": "",
+    "Length": 15,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 43,
+    "Name": "Card acceptor name",
+    "RawValue": "",
+    "Value": "",
+    "Length": 40,
+    "Type": "FIXED",
+    "Format": "an",
+    "Exist": false
+  },
+  {
+    "Id": 44,
+    "Name": "Additional response data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 25,
+    "Type": "FIXED",
+    "Format": "an",
+    "Exist": false
+  },
+  {
+    "Id": 45,
+    "Name": "Track 1 data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 77,
+    "Type": "FIXED",
+    "Format": "an",
+    "Exist": false
+  },
+  {
+    "Id": 46,
+    "Name": "Card Type Id",
+    "RawValue": "",
+    "Value": "",
+    "Length": 1,
+    "Type": "FIXED",
+    "Format": "an",
+    "Exist": false
+  },
+  {
+    "Id": 47,
+    "Name": "Additional data (national)",
+    "RawValue": "",
+    "Value": "",
+    "Length": 999,
+    "Type": "FIXED",
+    "Format": "an",
+    "Exist": false
+  },
+  {
+    "Id": 48,
+    "Name": "Additional data (private)",
+    "RawValue": "",
+    "Value": "",
+    "Length": 999,
+    "Type": "FIXED",
+    "Format": "an",
+    "Exist": false
+  },
+  {
+    "Id": 49,
+    "Name": "Currency code, transaction",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 50,
+    "Name": "Currency code, settlement",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 51,
+    "Name": "Currency code, cardholder billing",
+    "RawValue": "",
+    "Value": "",
+    "Length": 2,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 52,
+    "Name": "Personal identification number data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 8,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 53,
+    "Name": "Security related control information",
+    "RawValue": "",
+    "Value": "",
+    "Length": 24,
+    "Type": "FIXED",
+    "Format": "b",
+    "Exist": false
+  },
+  {
+    "Id": 54,
+    "Name": "Additional amounts",
+    "RawValue": "",
+    "Value": "",
+    "Length": 14,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 55,
+    "Name": "ICC data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 0,
+    "Type": "LLLVAR",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 56,
+    "Name": "Reserved (ISO)",
+    "RawValue": "",
+    "Value": "",
+    "Length": 25,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 57,
+    "Name": "Reserved (ISO)",
+    "RawValue": "",
+    "Value": "",
+    "Length": 25,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 58,
+    "Name": "Reserved (ISO)",
+    "RawValue": "",
+    "Value": "",
+    "Length": 25,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 59,
+    "Name": "Reserved (ISO)",
+    "RawValue": "",
+    "Value": "",
+    "Length": 25,
+    "Type": "FIXED",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 60,
+    "Name": "Additional Data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 0,
+    "Type": "LLLVAR",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 61,
+    "Name": "Additional Data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 0,
+    "Type": "LLLVAR",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 62,
+    "Name": "Additional Data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 0,
+    "Type": "LLLVAR",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 63,
+    "Name": "Additional Data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 0,
+    "Type": "LLLVAR",
+    "Format": "n",
+    "Exist": false
+  },
+  {
+    "Id": 64,
+    "Name": "Additional Data",
+    "RawValue": "",
+    "Value": "",
+    "Length": 0,
+    "Type": "LLLVAR",
+    "Format": "n",
+    "Exist": false
+  }
 ]
